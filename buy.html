@@ -1,0 +1,81 @@
+<html>
+<head><title>buy now</title>
+<style>
+h1
+{
+    font-size: 50px;  
+    background-color:black;
+    color: white;
+    text-align: center;
+	font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+    padding-top: 15px;
+    padding-right: 30px;
+    padding-bottom: 15px;
+    border-left: 6px solid black;
+    background-color: lightgrey;
+	 padding-left: 25px;
+
+	 } 
+	 
+</style>
+</head>
+<body>
+<form name="myform" onsubmit="func()" action="index2.html">
+<center>
+<h1>--SHIPPING DETAILS--</h1>
+<h3>NAME</h3>
+<input type="text" name="name">*
+<h3>EMAIL</h3>
+<input type="text" name="email">*
+<h3>SHIPPING ADDRESS</h3>
+<input type="text" name="address">*
+<h3>PHONE NO.</h3>
+<input type="text" name="phone">*
+<h2>
+<input type="submit" onclick="return validate_form()" value="BUY NOW">
+<script>
+function validate_form(){
+var x=document.forms["myform"] ["name"].value;
+var y=document.forms["myform"] ["email"].value;
+var z=document.forms["myform"] ["address"].value;
+var zz=document.forms["myform"] ["phone"].value;
+
+if(x=="")
+{
+alert(" name must be filled out!");
+return false;
+}
+if(y=="")
+{
+alert(" email must be filled out!");
+return false;
+}
+if(z=="")
+{
+alert(" address must be filled out!");
+return false;
+}
+if(zz=="")
+{
+alert(" phone must be filled out!");
+return false;
+}
+}
+function func(){
+alert("Your order has been placed successfully...THANKYOU for buying");
+}
+
+
+</script>
+</h2>
+</center>
+</form>
+<?php
+echo 'redirecting to login';
+header("refresh:2; url=index2.html");
+?>
+</body>
+</html>
